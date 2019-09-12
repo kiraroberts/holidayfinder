@@ -15,15 +15,11 @@ $(document).ready(function() {
 
     promise.then(function(response) {
       const body = JSON.parse(response);
-        for (var i = 0; i < body.response.holidays.length; i++) {
-          // console.log("made it to for loop");
+        for (let i = 0; i < body.response.holidays.length; i++) {
           if (body.response.holidays[i].date.iso === date) {
-            // console.log("made it to if");
-            // console.log(body.response.holidays[i].name);
             $('#nameOutput').text(body.response.holidays[i].name);
             $('#descOutput').text(body.response.holidays[i].description);
-
-          } 
+          }
       }
     });
   });
